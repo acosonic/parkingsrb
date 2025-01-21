@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Zones Novi Sad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .plate {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .plate input {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #0066cc;
+            color: white;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 10px;
+        }
+        .plate input:disabled {
+            background-color: #004d99;
+        }
+        .plate button {
+            margin-top: 5px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #0066cc;
+            color: white;
+            cursor: pointer;
+        }
+        .plate button:hover {
+            background-color: #004d99;
+        }
+        .zone {
+            border: 1px solid #ddd;
+            margin: 15px 0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .zone-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f2f2f2;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+        .zone-header.red {
+            color: #cc0000;
+        }
+        .zone-header.blue {
+            color: #0066cc;
+        }
+        .zone-header.yellow {
+            color: #e6b800;
+        }
+        .zone-header.gold {
+            color: #ffcc00;
+        }
+        .zone-header.light-blue {
+            color: #66b2ff;
+        }
+        .zone-header.gray {
+            color: #808080;
+        }
+        .zone-content {
+            padding: 10px 15px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .zone-number {
+            font-size: 16px;
+        }
+        .sms-link {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #0066cc;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .sms-link:hover {
+            background-color: #004d99;
+        }
+    </style>
+    <script>
+        function loadPlate() {
+            const plateInput = document.getElementById('plate-input');
+            const savedPlate = localStorage.getItem("plate");
+            if (savedPlate) {
+                plateInput.value = savedPlate;
+            }
+            generateLinks(savedPlate || plateInput.value);
+        }
+
+        function enableEdit() {
+            const plateInput = document.getElementById('plate-input');
+            const saveButton = document.getElementById('save-button');
+            plateInput.disabled = false;
+            saveButton.style.display = 'inline-block';
+        }
+
+        function savePlate() {
+            const plateInput = document.getElementById('plate-input');
+            const plateValue = plateInput.value;
+	    localStorage.setItem("plate",plateValue);
+            plateInput.disabled = true;
+            document.getElementById('save-button').style.display = 'none';
+            generateLinks(plateValue);
+        }
+
+        function generateLinks(plate) {
+            const links = document.querySelectorAll('.sms-link');
+            links.forEach(link => {
+                const href = link.getAttribute('data-href-template').replace('PLATE_PLACEHOLDER', plate);
+                link.setAttribute('href', href);
+            });
+        }
+
+        window.onload = loadPlate;
+    </script>
+<link rel="icon" type="image/png" href="/parking/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/parking/favicon.svg" />
+<link rel="shortcut icon" href="/parking/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/parking/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="NS Parking" />
+<link rel="manifest" href="/parking/site.webmanifest" />
+</head>
+<body>
+    <div class="container">
+        <div class="plate">
+            <input id="plate-input" type="text" value="NS000AA" disabled>
+            <button onclick="enableEdit()">Edit</button>
+            <button id="save-button" onclick="savePlate()" style="display:none;">Save</button>
+        </div>
+
+        <div class="zone">
+            <div class="zone-header red">
+                <span class="zone-number">Crvena</span>
+                <span>8211</span>
+            </div>
+            <div class="zone-content">
+                60.00 RSD/h
+                <a class="sms-link" data-href-template="sms:8211?body=PLATE_PLACEHOLDER">📩 Pošalji SMS</a>
+            </div>
+        </div>
+
+        <div class="zone">
+            <div class="zone-header blue">
+                <span class="zone-number">Plava</span>
+                <span>8212</span>
+            </div>
+            <div class="zone-content">
+                50.00 RSD/h
+                <a class="sms-link" data-href-template="sms:8212?body=PLATE_PLACEHOLDER">📩 Pošalji SMS</a>
+            </div>
+        </div>
+
+        <div class="zone">
+            <div class="zone-header yellow">
+                <span class="zone-number">Najlon-dnevna karta</span>
+                <span>8214</span>
+            </div>
+            <div class="zone-content">
+                80.00 RSD/h
+                <a class="sms-link" data-href-template="sms:8214?body=PLATE_PLACEHOLDER">📩 Pošalji SMS</a>
+            </div>
+        </div>
+
+        <div class="zone">
+            <div class="zone-header light-blue">
+                <span class="zone-number">Plava-dnevna karta</span>
+                <span>8215</span>
+            </div>
+            <div class="zone-content">
+                95.00 RSD/h
+                <a class="sms-link" data-href-template="sms:8215?body=PLATE_PLACEHOLDER">📩 Pošalji SMS</a>
+            </div>
+        </div>
+
+        <div class="zone">
+            <div class="zone-header gray">
+                <span class="zone-number">Bela</span>
+                <span>8218</span>
+            </div>
+            <div class="zone-content">
+                30.00 RSD/h
+                <a class="sms-link" data-href-template="sms:8218?body=PLATE_PLACEHOLDER">📩 Pošalji SMS</a>
+            </div>
+        </div>
+
+        <div class="zone">
+            <div class="zone-header gold">
+                <span class="zone-number">Ekstra</span>
+                <span>8210</span>
+            </div>
+            <div class="zone-content">
+                80.00 RSD/h
+                <a class="sms-link" data-href-template="sms:8210?body=PLATE_PLACEHOLDER">📩 Pošalji SMS</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
