@@ -1,0 +1,134 @@
+{
+  "gradovi": [
+    {
+      "grad": "Beograd",
+      "parking_zone": [
+        {
+          "naziv": "Zona 1",
+          "vreme_naplate": {
+            "pocetak": "08:00",
+            "kraj": "21:00"
+          },
+          "cena_po_jedinici": {
+            "jedinica": "sat",
+            "cena": 100
+          },
+          "sms_broj": "9111"
+        },
+        {
+          "naziv": "Zona 2",
+          "vreme_naplate": {
+            "pocetak": "08:00",
+            "kraj": "21:00"
+          },
+          "cena_po_jedinici": {
+            "jedinica": "sat",
+            "cena": 80
+          },
+          "sms_broj": "9112"
+        },
+        {
+          "naziv": "Zona 3",
+          "vreme_naplate": {
+            "pocetak": "08:00",
+            "kraj": "18:00"
+          },
+          "cena_po_jedinici": {
+            "jedinica": "dan",
+            "cena": 500
+          },
+          "sms_broj": "9113"
+        }
+      ]
+    },
+    {
+      "grad": "Novi Sad",
+      "parking_zone": [
+        {
+          "naziv": "Crvena",
+          "vreme_naplate": {
+            "pocetak": "07:00",
+            "kraj": "21:00"
+          },
+          "cena_po_jedinici": {
+            "jedinica": "sat",
+            "cena": 55
+          },
+          "sms_broj": "8211"
+        },
+        {
+          "naziv": "Plava",
+          "vreme_naplate": {
+            "pocetak": "07:00",
+            "kraj": "21:00"
+          },
+          "cena_po_jedinici": {
+            "jedinica": "sat",
+            "cena": 45
+          },
+          "sms_broj": "8212"
+        },
+        {
+          "naziv": "Bela",
+          "vreme_naplate": {
+            "pocetak": "07:00",
+            "kraj": "15:00"
+          },
+          "cena_po_jedinici": {
+            "jedinica": "sat",
+            "cena": 35
+          },
+          "sms_broj": "8213"
+        },
+        {
+          "naziv": "Ekstra zona",
+          "vreme_naplate": {
+            "pocetak": "07:00",
+            "kraj": "21:00"
+          },
+          "cena_po_jedinici": {
+            "jedinica": "sat",
+            "cena": 70
+          },
+          "sms_broj": "8210"
+        },
+        {
+          "naziv": "Štrand",
+          "vreme_naplate": {
+            "pocetak": "08:00",
+            "kraj": "20:00"
+          },
+          "cena_po_jedinici": {
+            "jedinica": "dan",
+            "cena": 150
+          },
+          "sms_broj": "8215"
+        },
+        {
+          "naziv": "Najlon",
+          "vreme_naplate": {
+            "pocetak": "06:00",
+            "kraj": "12:00"
+          },
+          "cena_po_jedinici": {
+            "jedinica": "sat",
+            "cena": 20
+          },
+          "sms_broj": "8216"
+        },
+        {
+          "naziv": "Dnevne karte",
+          "vreme_naplate": {
+            "pocetak": "00:00",
+            "kraj": "23:59"
+          },
+          "cena_po_jedinici": {
+            "jedinica": "dan",
+            "cena": 200
+          },
+          "sms_broj": "8217"
+        }
+      ]
+    }
+  ]
+}
