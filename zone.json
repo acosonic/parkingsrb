@@ -5,6 +5,7 @@
       "parking_zone": [
         {
           "naziv": "Zona 1",
+          "boja_zone": "#FF0000",
           "vreme_naplate": {
             "pocetak": "08:00",
             "kraj": "21:00"
@@ -13,10 +14,12 @@
             "jedinica": "sat",
             "cena": 100
           },
-          "sms_broj": "9111"
+          "sms_broj": "9111",
+          "max_zadrzavanje": "2 sata"
         },
         {
           "naziv": "Zona 2",
+          "boja_zone": "#0000FF",
           "vreme_naplate": {
             "pocetak": "08:00",
             "kraj": "21:00"
@@ -25,10 +28,12 @@
             "jedinica": "sat",
             "cena": 80
           },
-          "sms_broj": "9112"
+          "sms_broj": "9112",
+          "max_zadrzavanje": "3 sata"
         },
         {
           "naziv": "Zona 3",
+          "boja_zone": "#008000",
           "vreme_naplate": {
             "pocetak": "08:00",
             "kraj": "18:00"
@@ -37,7 +42,8 @@
             "jedinica": "dan",
             "cena": 500
           },
-          "sms_broj": "9113"
+          "sms_broj": "9113",
+          "max_zadrzavanje": "1 dan"
         }
       ]
     },
@@ -46,6 +52,7 @@
       "parking_zone": [
         {
           "naziv": "Crvena",
+          "boja_zone": "#FF0000",
           "vreme_naplate": {
             "pocetak": "07:00",
             "kraj": "21:00"
@@ -54,10 +61,12 @@
             "jedinica": "sat",
             "cena": 55
           },
-          "sms_broj": "8211"
+          "sms_broj": "8211",
+          "max_zadrzavanje": "2 sata"
         },
         {
           "naziv": "Plava",
+          "boja_zone": "#0000FF",
           "vreme_naplate": {
             "pocetak": "07:00",
             "kraj": "21:00"
@@ -66,10 +75,12 @@
             "jedinica": "sat",
             "cena": 45
           },
-          "sms_broj": "8212"
+          "sms_broj": "8212",
+          "max_zadrzavanje": "3 sata"
         },
         {
           "naziv": "Bela",
+          "boja_zone": "#FFFFFF",
           "vreme_naplate": {
             "pocetak": "07:00",
             "kraj": "15:00"
@@ -78,10 +89,12 @@
             "jedinica": "sat",
             "cena": 35
           },
-          "sms_broj": "8213"
+          "sms_broj": "8213",
+          "max_zadrzavanje": "4 sata"
         },
         {
           "naziv": "Ekstra zona",
+          "boja_zone": "#FFA500",
           "vreme_naplate": {
             "pocetak": "07:00",
             "kraj": "21:00"
@@ -90,10 +103,12 @@
             "jedinica": "sat",
             "cena": 70
           },
-          "sms_broj": "8210"
+          "sms_broj": "8210",
+          "max_zadrzavanje": "2 sata"
         },
         {
           "naziv": "Štrand",
+          "boja_zone": "#00FFFF",
           "vreme_naplate": {
             "pocetak": "08:00",
             "kraj": "20:00"
@@ -102,10 +117,12 @@
             "jedinica": "dan",
             "cena": 150
           },
-          "sms_broj": "8215"
+          "sms_broj": "8215",
+          "max_zadrzavanje": "1 dan"
         },
         {
           "naziv": "Najlon",
+          "boja_zone": "#FFFF00",
           "vreme_naplate": {
             "pocetak": "06:00",
             "kraj": "12:00"
@@ -114,10 +131,12 @@
             "jedinica": "sat",
             "cena": 20
           },
-          "sms_broj": "8216"
+          "sms_broj": "8216",
+          "max_zadrzavanje": "5 sati"
         },
         {
           "naziv": "Dnevne karte",
+          "boja_zone": "#808080",
           "vreme_naplate": {
             "pocetak": "00:00",
             "kraj": "23:59"
@@ -126,7 +145,8 @@
             "jedinica": "dan",
             "cena": 200
           },
-          "sms_broj": "8217"
+          "sms_broj": "8217",
+          "max_zadrzavanje": "1 dan"
         }
       ]
     }
